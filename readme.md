@@ -6,10 +6,6 @@ Given a list of items, only render what's visible on the screen while allowing s
 
 Use in the same way as a solid `For` https://www.solidjs.com/docs/latest/api#%3Cfor%3E
 
-## Install
-
-`npm install https://github.com/titoBouzout/solid-windowed.git`
-
 ```jsx
 import Windowed from 'solid-windowed'
 
@@ -33,6 +29,14 @@ export default function YourComponent() {
 }
 ```
 
+## Install
+
+`npm install https://github.com/titoBouzout/solid-windowed.git`
+
+or
+
+`npm install solid-windowed`
+
 ## How it works?
 
 It renders the first 10 elements of the list, then averages the height and with that in mind, we get the height of the container and render N items. As you scroll we slice the list to show what's supposed to be visible.
@@ -40,6 +44,10 @@ It renders the first 10 elements of the list, then averages the height and with 
 ## Bugs
 
 - When scrolling to the bottom of the list, if you overscroll, you will have to overscroll back to be able to scroll up again.
+
+## Caveats
+
+- You are responsible for setting the height of the container item. Child will be 100%
 
 ## Author
 
