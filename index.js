@@ -12,7 +12,7 @@ let itemHeight = 0
 
 let state = createMutable({
 	filtered: [],
-	height: 3000,
+	height: '100%',
 	top: 0,
 })
 
@@ -20,11 +20,13 @@ const updateHeight = () => {
 	// calculate the avg height of the list of items
 	// takes as reference the first 10 items the first time
 	itemHeight =
-		Array.from(nodes.childNodes).reduce((a, b) => a + b.getBoundingClientRect().height, 0) /
-		nodes.childNodes.length
+		Array.from(nodes.childNodes).reduce((a, b) => {
+			let s = window.getComputedStyle(b)
+			return a + b.offsetHeight + parseFloat(s.marginTop) + parseFloat(s.marginBottom)
+		}, 0) / nodes.childNodes.length
 
 	// calculate how many items can we display at a time
-	end = Math.ceil(scrollbar.getBoundingClientRect().height / itemHeight)
+	end = Math.floor(scrollbar.getBoundingClientRect().height / itemHeight)
 
 	// set the overflow
 	state.height = itemHeight * list.length
@@ -38,9 +40,11 @@ const updateList = () => {
 	let scrollTop = scrollbar.scrollTop
 	start = Math.ceil(scrollTop / itemHeight)
 
+	// calculate how many items can we display at a time
+	end = Math.floor(scrollbar.getBoundingClientRect().height / itemHeight)
+
 	// if end overflows, get the last N items
-	state.filtered =
-		start + end > list.length - end ? list.slice(-end) : list.slice(start, start + end)
+	state.filtered = start + end > list.length ? list.slice(-end) : list.slice(start, start + end)
 
 	// I have a bug here, when scrolling to the very bottom of the list.
 	// it cakes a while to scrollbar for some reason
@@ -69,10 +73,7 @@ export default function Windowed(props) {
 
 	return (
 		<div ref={scrollbar} style="height:100%;overflow-y:auto;" onScroll={updateList}>
-			<div
-				ref={container}
-				style={`height:${state.height}px;max-height:${state.height}px;transform:translate3d(0,0,0);`}
-			>
+			<div ref={container} style={`height:${state.height}px;transform:translate3d(0,0,0);`}>
 				<div ref={nodes} style={`position:fixed;top:${state.top}px;`}>
 					<For each={state.filtered}>{(item, idx) => props.children(item, idx() + start)}</For>
 				</div>
