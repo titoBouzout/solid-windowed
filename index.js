@@ -12,7 +12,7 @@ let itemHeight = 0
 
 let state = createMutable({
 	filtered: [],
-	height: '100%',
+	height: 3000,
 	top: 0,
 })
 
