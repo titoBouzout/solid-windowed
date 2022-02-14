@@ -8,7 +8,7 @@ Use in the same way as a solid `For` https://www.solidjs.com/docs/latest/api#%3C
 
 ## Install
 
-`npm install -g https://github.com/titoBouzout/solid-windowed.git`
+`npm install https://github.com/titoBouzout/solid-windowed.git`
 
 ```jsx
 import Windowed from 'solid-windowed'
