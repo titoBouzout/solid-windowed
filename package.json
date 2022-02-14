@@ -1,13 +1,18 @@
 {
 	"name": "solid-windowed",
-	"version": "0.0.0",
+	"version": "0.1.0",
 	"description": "Given a list of items, only render what's visible on the screen while allowing scrolling the whole list.",
 	"main": "index.js",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/titoBouzout/solid-windowed.git"
 	},
-	"keywords": ["solidjs", "solid", "scroll", "windowed"],
+	"keywords": [
+		"solidjs",
+		"solid",
+		"scroll",
+		"windowed"
+	],
 	"author": "Tito Bouzout",
 	"license": "GPL",
 	"bugs": {
@@ -48,11 +53,16 @@
 			"allowImportExportEverywhere": false,
 			"codeFrame": false
 		},
-		"plugins": ["react"],
+		"plugins": [
+			"react"
+		],
 		"rules": {
 			"comma-dangle": "off",
 			"indent": "off",
-			"linebreak-style": ["error", "unix"],
+			"linebreak-style": [
+				"error",
+				"unix"
+			],
 			"no-cond-assign": "off",
 			"no-console": "off",
 			"no-empty": "off",
