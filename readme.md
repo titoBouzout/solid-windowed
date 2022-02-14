@@ -16,10 +16,10 @@ export default function YourComponent() {
 	return (
 		<div style="height:100%;">
 			<Windowed each={list}>
-				{(value, idx) => {
+				{(value, index) => {
 					return (
 						<div>
-							Index in list is {idx}, value is: {value}
+							Index in list is {index()}, value is: {value}
 						</div>
 					)
 				}}

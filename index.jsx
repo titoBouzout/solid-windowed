@@ -26,7 +26,7 @@ const updateHeight = () => {
 		}, 0) / nodes.childNodes.length
 
 	// calculate how many items can we display at a time
-	end = Math.floor(scrollbar.getBoundingClientRect().height / itemHeight)
+	end = Math.ceil(scrollbar.getBoundingClientRect().height / itemHeight)
 
 	// set the overflow
 	state.height = itemHeight * list.length
@@ -41,7 +41,7 @@ const updateList = () => {
 	start = Math.ceil(scrollTop / itemHeight)
 
 	// calculate how many items can we display at a time
-	end = Math.floor(scrollbar.getBoundingClientRect().height / itemHeight)
+	end = Math.ceil(scrollbar.getBoundingClientRect().height / itemHeight)
 
 	// if end overflows, get the last N items
 	state.filtered = start + end > list.length ? list.slice(-end) : list.slice(start, start + end)
@@ -75,7 +75,9 @@ export default function Windowed(props) {
 		<div ref={scrollbar} style="height:100%;overflow-y:auto;" onScroll={updateList}>
 			<div ref={container} style={`height:${state.height}px;transform:translate3d(0,0,0);`}>
 				<div ref={nodes} style={`position:fixed;top:${state.top}px;`}>
-					<For each={state.filtered}>{(item, idx) => props.children(item, idx() + start)}</For>
+					<For each={state.filtered}>
+						{(item, idx) => props.children(item, () => idx() + start)}
+					</For>
 				</div>
 			</div>
 		</div>
