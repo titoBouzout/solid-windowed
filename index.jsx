@@ -57,7 +57,7 @@ const update = () => {
 
 	// trigger reactivity as little as possible (getters/setters)
 	let top = 0
-	let height = state.height
+	let height = parseInt(state.height)
 
 	// if `start + end` overflows, get the last N items
 	if (start + end > list.length) {
@@ -69,7 +69,7 @@ const update = () => {
 	}
 
 	// fix:when a window is maximimed, after being small enough
-	if (parseInt(top) > parseInt(height)) {
+	if (top > height) {
 		top = height
 	}
 
