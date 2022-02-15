@@ -62,3 +62,4 @@ I'm not really sure what features to expect from a component like this. So feel 
 ## URL
 
 - https://github.com/titoBouzout/solid-windowed
+- Playground. Look at solid handling 1.5 million of items and being able to render and scroll them super fast: (caution: this is old and inlined code just for demonstration, it has bugs) https://playground.solidjs.com/?hash=1151942932&version=1.3.7
