@@ -45,6 +45,12 @@ It renders the first 10 elements of the list, then averages the height and with 
 
 - When scrolling to the bottom of the list, if you overscroll, you will have to overscroll back to be able to scroll up again.
 
+## Expected Features
+
+I'm not really sure what features to expect from a component like this. So feel free to ask.
+
+- An option to scroll to the bottom(like in using this for a chat), or to maybe to any item should be given?
+
 ## Caveats
 
 - You are responsible for setting the height of the container item. Child will be 100%
