@@ -1,6 +1,6 @@
 {
 	"name": "solid-windowed",
-	"version": "0.8.0",
+	"version": "0.9.0",
 	"description": "Given a list of items, only render what's visible on the screen while allowing scrolling the whole list.",
 	"main": "index.jsx",
 	"repository": {
