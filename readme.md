@@ -4,7 +4,7 @@ Given a list of items, only render what's visible on the screen while allowing s
 
 ## Usage
 
-Use in the same way as a solid `For` https://www.solidjs.com/docs/latest/api#%3Cfor%3E
+Use in the same way as a solid `For`. Please see: https://www.solidjs.com/docs/latest/api
 
 ```jsx
 import Windowed from 'solid-windowed'
@@ -19,7 +19,7 @@ export default function YourComponent() {
 				{(value, index) => {
 					return (
 						<div>
-							Index in list is {index()}, value is: {value}
+							Index in list is {index}, value is: {value}
 						</div>
 					)
 				}}
@@ -39,21 +39,24 @@ or
 
 ## How it works?
 
-It renders the first 10 elements of the list, then averages the height and with that in mind, we get the height of the container and render N items. As you scroll we slice the list to show what's supposed to be visible.
-
-## Bugs
-
-- When scrolling to the bottom of the list, if you overscroll, you will have to overscroll back to be able to scroll up again.
-
-## Expected Features
-
-I'm not really sure what features to expect from a component like this. So feel free to ask.
-
-- An option to scroll to the bottom(like in using this for a chat), or to maybe to any item should be given?
+It renders the first 10 elements of the list, then averages the height and with that in mind, we get the height of the container and render N items. As you scroll we slice the list to show what's supposed to be visible. If our average didn't fill the whole available space, we will add more items till its filled.
 
 ## Caveats
 
 - You are responsible for setting the height of the container item. Child will be 100%
+
+## Alternatives
+
+I started this project without knowing there was already an implementation of this concept
+
+- https://github.com/minht11/solid-virtual-container
+
+## Bugs That Have Been Fixed
+
+The end of the list, seems to be a problematic edge case for the implementation of this concept.
+
+- scrolling to the bottom doesn't render the last few items
+- when at the bottom of the list and then maximising to a bigger size, doesn't render previous items
 
 ## Author
 
@@ -62,4 +65,4 @@ I'm not really sure what features to expect from a component like this. So feel 
 ## URL
 
 - https://github.com/titoBouzout/solid-windowed
-- Playground. Look at solid handling 1.5 million of items and being able to render and scroll them super fast: (caution: this is old and inlined code just for demonstration, it has bugs) https://playground.solidjs.com/?hash=1151942932&version=1.3.7
+- Playground. Look at solid handling 1.5 million of items and being able to render and scroll them super fast: https://playground.solidjs.com/?hash=1367815389&version=1.3.7
