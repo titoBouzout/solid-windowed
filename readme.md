@@ -65,4 +65,4 @@ The end of the list, seems to be a problematic edge case for the implementation 
 ## URL
 
 - https://github.com/titoBouzout/solid-windowed
-- Playground. Look at solid handling 1.5 million of items and being able to render and scroll them super fast: https://playground.solidjs.com/?hash=1367815389&version=1.3.7
+- Playground. Look at solid handling 1.5 million of items and being able to render and scroll them super fast: https://playground.solidjs.com/?hash=-1161667584&version=1.3.7
