@@ -2,6 +2,8 @@
 
 Given a list of items, only render what's visible on the screen while allowing scrolling the whole list.
 
+A Solid component. See https://www.solidjs.com/
+
 ## Usage
 
 Use in the same way as a solid `For`. Please see: https://www.solidjs.com/docs/latest/api
