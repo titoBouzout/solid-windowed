@@ -33,10 +33,6 @@ export default function YourComponent() {
 
 ## Install
 
-`npm install https://github.com/titoBouzout/solid-windowed.git`
-
-or
-
 `npm install solid-windowed`
 
 ## How it works?
