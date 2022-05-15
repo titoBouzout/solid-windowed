@@ -45,7 +45,7 @@ It renders the first 10 elements of the list, then averages the height and with 
 
 ## Caveats
 
-- You are responsible for setting the height of the container item. Child will be 100%
+- You are responsible for setting the height of the container item. Child will be 100%. For example using this component on the `body` and having `<!DOCTYPE html>` will require to set the `height` of `html` and `body` to 100%. See https://github.com/titoBouzout/solid-windowed/issues/2 and https://stackoverflow.com/questions/32214152/why-does-height-100-work-when-doctype-is-removed
 
 ## Alternatives
 
@@ -67,4 +67,4 @@ The end of the list, seems to be a problematic edge case for the implementation 
 ## URL
 
 - https://github.com/titoBouzout/solid-windowed
-- Playground. Look at solid handling 1.5 million of items and being able to render and scroll them super fast: https://playground.solidjs.com/?hash=-1161667584&version=1.3.7
+- Playground. Look at solid handling 1.5 million of items and being able to render and scroll them super fast: https://playground.solidjs.com/?hash=430573707&version=1.4.1
